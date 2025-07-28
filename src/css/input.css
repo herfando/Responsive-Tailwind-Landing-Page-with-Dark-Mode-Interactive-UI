@@ -1,1 +1,33 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+
+/* DARK MODE */
+@custom-variant dark (&:where(.dark, .dark * ));
+
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .animate-scroll-left {
+    animation: scroll-left 10s linear infinite;
+  }
+
+/* Tambahkan animasi kustom di layer utilities */
+@layer utilities {
+  /* Kelas font Inter */
+  .font-inter {
+    font-family: "Inter", sans-serif;
+  }
+  /* Display mobile */
+    @media (max-width: 639px) {
+    .max-sm\:custom-style {
+      /* Contoh style, ubah sesukamu di HTML */
+      scale: 0.5;
+    }
+  }
+}
+

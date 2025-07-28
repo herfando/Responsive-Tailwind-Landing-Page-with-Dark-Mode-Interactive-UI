@@ -7,6 +7,910 @@
     <link rel="stylesheet" href="./css/output.css" />
   </head>
   <body>
-    <h1>your code here</h1>
+    <!-- 1.Header Start-->
+    <header class="lg:scale-100 xs:scale-50 fixed top-0 left-0 w-full h-21 z-30 flex items-center justify-around bg-white/70 backdrop-blur-md dark:bg-black/70 dark:text-white shadow-md">
+    <nav class="flex cursor-pointer">
+      <button
+      id="theme-toggle"
+      class="cursor-pointer text-sm font-bold px-4 py-2 bg-gray-200 dark:bg-gray-700 text-black dark:text-white rounded-4xl"
+    >
+      dark/light
+    </button>
+
+    <script>
+      // Cek preferensi yang tersimpan
+      if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.classList.add("dark");
+      } else if (localStorage.getItem("theme") === "light") {
+        document.documentElement.classList.remove("dark");
+      } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        document.documentElement.classList.add("dark");
+      }
+
+      // Toggle mode gelap dan simpan preferensi
+      document.getElementById("theme-toggle").addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark");
+        if (document.documentElement.classList.contains("dark")) {
+          localStorage.setItem("theme", "dark");
+        } else {
+          localStorage.setItem("theme", "light");
+        }
+      });
+    </script>
+        <img class="pl-4" src="/assets/images/logo-symbol.png" alt="your logo" />
+        <div class="items-center flex pl-2 font-bold">Your Logo</div>
+      </nav>
+      <nav class="space-x-5 cursor-pointer">
+        <a>About</a>
+        <a>Service</a>
+        <a>Projects</a>
+        <a>Testimonials</a>
+        <a>FAQ</a>
+      </nav>
+      <button
+        class="bg-[#FF623E] w-49.25 h-11 rounded-full text-white cursor-pointer"
+      >
+        Let's Talk
+      </button>
+    </header>
+    <!-- 1.Header End-->
+
+    <!-- 2.Hero Section Start-->
+    <section
+      class="font-inter items-center justify-center h-151.75 dark:bg-black w-full flex">
+      <article>
+        <h1 class=" text-6xl font-bold pb-4 text-black dark:text-white">
+          Your Tech Partner for <br /><span class="text-[#FF6C37]">Smarter Growth</span>
+        </h1>
+        <h4 class="pb-8 text-black dark:text-white text-xl">
+          We deliver tailored IT solutions to help you scale with speed and
+          <br />
+          confidence.
+        </h4>
+        <button
+          class="text-white bg-[#FF623E] w-50 h-12 rounded-full cursor-pointer">
+          Let’s Talk
+        </button>
+      </article>
+      <img
+        class="block dark:hidden h-186.75 w-186.75 mt-[-28px]"
+        src="/assets/images/Image Hero light.png"
+        alt="hanphone light mode"/>
+      <img
+        class="hidden dark:block h-186.75 w-186.75 mt-[-28px]"
+        src="/assets/images/Image Hero dark.png"
+        alt="handphone dark mode"/>
+    </section>
+    <!-- 2.Hero Section Start-->
+
+    <!-- 3.Brand Section Start-->
+    <section
+      class="relative z-20 font-inter items-center h-32 dark:bg-black w-full flex flex-col">
+      <h3 class="text-xl mb-2 pb-13 dark:text-white">
+        Trusted by Global Innovators & Leading Brands
+      </h3>
+      <div
+        class="flex grayscale overflow-hidden w-full whitespace-nowrap animate-scroll-left space-x-10">
+        <img
+          class="h-10 w-auto"
+          src="/assets/images/adobe.png"
+          alt="adobe company"
+        />
+        <img
+          class="h-10 w-auto"
+          src="/assets/images/upwork.png"
+          alt="upwork company"/>
+        <img
+          class="h-10 w-auto"
+          src="/assets/images/zoom.png"
+          alt="zoom company"/>
+        <img
+          class="h-10 w-auto"
+          src="/assets/images/postman.png"
+          alt="postman company"/>
+        <img
+          class="h-10 w-auto"
+          src="/assets/images/databricks.png"
+          alt="databricks company"/>
+        <img
+          class="h-10 w-auto"
+          src="/assets/images/airbnb.png"
+          alt="airbnb company"/>
+        <img
+          class="h-10 w-auto"
+          src="/assets/images/dropbox.png"
+          alt="dropbox company"/>
+        <img
+          class="h-10 w-auto"
+          src="/assets/images/paypal.png"
+          alt="paypal company"/>
+        <img
+          class="h-10 w-auto"
+          src="/assets/images/netflix.png"
+          alt="netflix company"/>
+      </div>
+    </section>
+    <!-- 3.Brand Section End-->
+
+    <!-- 4.Achievement Section Start-->
+    <section
+      class="flex justify-center items-center font-inter h-149.5 dark:bg-black w-full">
+      <article>
+        <h2 class=" pb-5 text-4xl dark:text-white font-bold flex justify-center">
+          End-to-End IT Solutions That Drive Results
+        </h2>
+        <h4 class="pb-15 text-xl text-[#717680] flex justify-center">
+          From strategy to execution, we deliver solutions that grow your
+          business.
+        </h4>
+        <article class="dark:text-white flex space-x-10 content-center items-center">
+          <dl
+            class="h-[275px] w-[275px] border-4 border-[#DEDCDC] rounded-full grid justify-center text-center content-center">
+            <span class="text-[#FF623E] text-5xl font-bold">50+</span><br />
+            <span class="text-lg font-semibold">Projects Delivered</span>
+          </dl>
+          <dl
+            class="h-[275px] w-[275px] border-4 border-[#DEDCDC] rounded-full grid justify-center text-center content-center">
+            <span class="text-[#FF623E] text-5xl font-bold">5+</span><br />
+            <span class="text-lg font-semibold">Years of Experience</span>
+          </dl>
+          <dl
+            class="h-[275px] w-[275px] border-4 border-[#DEDCDC] rounded-full grid justify-center text-center content-center">
+            <span class="text-[#FF623E] text-5xl font-bold">10+</span><br />
+            <span class="text-lg font-semibold">Industry Awards Won</span>
+          </dl>
+          <dl
+            class="h-[275px] w-[275px] border-4 border-[#DEDCDC] rounded-full grid justify-center text-center content-center">
+            <span class="text-[#FF623E] text-5xl font-bold">100%</span><br />
+            <span class="text-lg font-semibold">Client Satisfaction Rate</span>
+          </dl>
+        </article>
+    </section>
+    <!-- 4.Achievement Section End-->
+
+    <!-- 5.Flow Process Section Start-->
+    <section class="flex flex-col gap-16 py-20 px-[140px] bg-white dark:bg-black w-full">
+      <div class="flex flex-col gap-[11px] text-center">
+        <h2 class="leading-14 text-[40px] font-bold text-black dark:text-white ">Our Process</h2>
+        <p class="leading-8 text-[18px] font-medium text-[#717680]">
+          Clear steps. Smart execution. Results you can count on.
+        </p>
+      </div>
+      <div class="relative grid grid-cols-[1fr_48px_1fr] gap-4 items-center">
+        <div
+          class=" flex justify-between dark:bg-[#0A0D12] p-6 border dark:border-[#181D27] bg-[#FAFAFA] border-[#DEDCDC] rounded-2xl dark:text-white"
+        >
+           <!-- Line 1 -->
+          <div class="flex flex-col ">
+            <p class="text-xl leading-[34px] font-bold bg">
+              Discovery & Consultation
+            </p>
+            <p class="leading-[30px] text-base font-medium text-[#717680]">
+              Understand Your Needs & Goals
+            </p>
+          </div>
+          <div class="basis-[12px]">
+            <img class="w-8 h-3 scale-200 text-[#0A0D12] filter invert dark:filter-none" src="/assets/images/chevron-up.png" />
+          </div>
+        </div>
+        <div
+          class="h-12 bg-[#ff623e] rounded-full leading-12 text-white text-center"
+        >
+          1
+        </div>
+        <div></div>
+        <!-- Line 2 -->
+        <div></div>
+        <div
+          class="h-12 bg-[#ff623e] rounded-full leading-12 text-white text-center"
+        >
+          2
+        </div>
+        <div
+          class=" flex justify-between dark:bg-[#0A0D12] p-6 border dark:border-[#181D27] bg-[#FAFAFA] border-[#DEDCDC] rounded-2xl dark:text-white"
+        >
+          <div class="flex flex-col">
+            <p class="text-xl leading-[34px] font-bold">Planning & Strategy</p>
+            <p class="leading-[30px] text-base font-medium text-[#717680]">
+              Build a Clear, Scalable Roadmap
+            </p>
+          </div>
+          <div class="basis-[12px]">
+            <img class="w-8 h-3 scale-200 text-[#0A0D12] filter invert dark:filter-none" src="/assets/images/chevron-up.png" />
+          </div>
+        </div>
+        <!-- Line 3 -->
+        <div
+          class=" flex justify-between dark:bg-[#0A0D12] p-6 border dark:border-[#181D27] bg-[#FAFAFA] border-[#DEDCDC] rounded-2xl dark:text-white"
+        >
+          <div class="flex flex-col">
+            <p class="text-xl leading-[34px] font-bold">Design & Prototyping</p>
+            <p class="leading-[30px] text-base font-medium text-[#717680]">
+              Craft UX That Converts
+            </p>
+          </div>
+          <div class="basis-[12px]">
+            <img class="w-8 h-3 scale-200 text-[#0A0D12] filter invert dark:filter-none" src="/assets/images/chevron-up.png" />
+          </div>
+        </div>
+        <div
+          class="h-12 bg-[#ff623e] rounded-full leading-12 text-white text-center"
+        >
+          3
+        </div>
+        <div></div>
+        <!-- Line 4 -->
+        <div></div>
+        <div
+          class="h-12 bg-[#ff623e] rounded-full leading-12 text-white text-center"
+        >
+          4
+        </div>
+        <div
+          class=" flex justify-between dark:bg-[#0A0D12] p-6 border dark:border-[#181D27] bg-[#FAFAFA] border-[#DEDCDC] rounded-2xl dark:text-white"
+        >
+          <div class="flex flex-col">
+            <p class="text-xl leading-[34px] font-bold">
+              Development & Implementation
+            </p>
+            <p class="leading-[30px] text-base font-medium text-[#717680]">
+              Deliver With Speed & Precision
+            </p>
+          </div>
+          <div class="basis-[12px]">
+            <img class="w-8 h-3 scale-200 text-[#0A0D12] filter invert dark:filter-none" src="/assets/images/chevron-up.png" />
+          </div>
+        </div>
+        <!-- Line 5 -->
+        <div
+          class=" flex justify-between dark:bg-[#0A0D12] p-6 border dark:border-[#181D27] bg-[#FAFAFA] border-[#DEDCDC] rounded-2xl dark:text-white"
+        >
+          <div class="flex flex-col">
+            <p class="text-xl leading-[34px] font-bold">
+              Testing & Optimization
+            </p>
+            <p class="leading-[30px] text-base font-medium text-[#717680]">
+              Ensure Quality at Every Step
+            </p>
+          </div>
+          <div class="basis-[12px]">
+            <img class="w-8 h-3 scale-200 text-[#0A0D12] filter invert dark:filter-none" src="/assets/images/chevron-up.png" />
+          </div>
+        </div>
+        <div
+          class="h-12 bg-[#ff623e] rounded-full leading-12 text-white text-center"
+        >
+          5
+        </div>
+        <div></div>
+        <!-- Line 6 -->
+        <div></div>
+        <div
+          class="h-12 bg-[#ff623e] rounded-full leading-12 text-white text-center"
+        >
+          6
+        </div>
+        <div
+          class=" flex justify-between dark:bg-[#0A0D12] p-6 border dark:border-[#181D27] bg-[#FAFAFA] border-[#DEDCDC] rounded-2xl dark:text-white"
+        >
+          <div class="flex flex-col">
+            <p class="text-xl leading-[34px] font-bold">Launch & Growth</p>
+            <p class="leading-[30px] text-base font-medium text-[#717680]">
+              Scale, Measure & Improve Continuously
+            </p>
+          </div>
+          <div class="basis-[12px]">
+            <img class="w-8 h-3 scale-200 text-[#0A0D12] filter invert dark:filter-none" src="/assets/images/chevron-up.png" />
+          </div>
+        </div>
+        <div
+          class="absolute top-[8.5%] left-1/2 -z-10 w-[1px] h-10/12 bg-[#dfdfdf]"
+        ></div>
+      </div>
+    </section>
+    <!-- 5.Flow Process Section End -->
+
+
+    <!-- 6.Service Section Start -->
+    <section class="flex flex-col gap-16 py-20 px-[140px] bg-white dark:bg-black text-black dark:text-white w-full">
+      <div class="flex flex-col gap-[11px] text-center">
+        <h2 class="leading-14 text-[40px] font-bold">
+          Smart IT Solutions That Grow With You
+        </h2>
+        <p class="leading-8 text-[18px] font-medium text-[#717680]">
+          Tailored tech to boost efficiency, security, and results.
+        </p>
+      </div>
+      <div class="grid grid-cols-3 gap-y-10 gap-x-5">
+        <div class="pb-5 px-5 border border-[#dcdcdc] rounded-2xl">
+          <div class="flex flex-col gap-5 mt-[-30px]">
+            <div><img src="/assets/images/Website.png" alt="website"/></div>
+            <div class="flex flex-col gap-1">
+              <h3 class="leading-[34px] text-xl font-bold">Web Development</h3>
+              <p class="leading-[30px] text-base font-medium text-[#717680]">
+                Build fast, scalable, and SEO-friendly websites.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="pb-5 px-5 border border-[#dcdcdc] rounded-2xl">
+          <div class="flex flex-col gap-5 mt-[-30px]">
+            <div><img src="/assets/images/Mobile App Development.png" alt="Mobile App Development"/></div>
+            <div class="flex flex-col gap-1">
+              <h3 class="leading-[34px] text-xl font-bold">
+                Mobile App Development
+              </h3>
+              <p class="leading-[30px] text-base font-medium text-[#717680]">
+                Native & cross-platform apps tailored to user needs.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="pb-5 px-5 border border-[#dcdcdc] rounded-2xl">
+          <div class="flex flex-col gap-5 mt-[-30px]">
+            <div><img src="/assets/images/UX Design.png" alt="UX Design"/></div>
+            <div class="flex flex-col gap-1">
+              <h3 class="leading-[34px] text-xl font-bold">UI/UX Design</h3>
+              <p class="leading-[30px] text-base font-medium text-[#717680]">
+                Delight users with intuitive and beautiful interfaces
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="pb-5 px-5 border border-[#dcdcdc] rounded-2xl">
+          <div class="flex flex-col gap-5 mt-[-30px]">
+            <div><img src="/assets/images/Cloud Solutions.png" alt="Cloud Solutions"/></div>
+            <div class="flex flex-col gap-1">
+              <h3 class="leading-[34px] text-xl font-bold">Cloud Solutions</h3>
+              <p class="leading-[30px] text-base font-medium text-[#717680]">
+                Secure and flexible cloud infrastructure for your growth.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="pb-5 px-5 border border-[#dcdcdc] rounded-2xl">
+          <div class="flex flex-col gap-5 mt-[-30px]">
+            <div><img src="/assets/images/Software Development.png" alt="Software Development"/></div>
+            <div class="flex flex-col gap-1">
+              <h3 class="leading-[34px] text-xl font-bold">
+                Software Development
+              </h3>
+              <p class="leading-[30px] text-base font-medium text-[#717680]">
+                Custom solutions built around your business logic.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="pb-5 px-5 border border-[#dcdcdc] rounded-2xl">
+          <div class="flex flex-col gap-5 mt-[-30px]">
+            <div><img src="/assets/images/IT Infrastructure.png" alt="IT Infrastructure"/></div>
+            <div class="flex flex-col gap-1">
+              <h3 class="leading-[34px] text-xl font-bold">
+                IT Infrastructure
+              </h3>
+              <p class="leading-[30px] text-base font-medium text-[#717680]">
+                Scale your backend with reliable tech foundations.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="pb-5 px-5 border border-[#dcdcdc] rounded-2xl">
+          <div class="flex flex-col gap-5 mt-[-30px]">
+            <div><img src="/assets/images/Cybersecurity Services.png" alt="Cybersecurity Services"/></div>
+            <div class="flex flex-col gap-1">
+              <h3 class="leading-[34px] text-xl font-bold">
+                Cybersecurity Services
+              </h3>
+              <p class="leading-[30px] text-base font-medium text-[#717680]">
+                Stay protected with enterprise-grade security.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="pb-5 px-5 border border-[#dcdcdc] rounded-2xl">
+          <div class="flex flex-col gap-5 mt-[-30px]">
+            <div>
+              <img src="/assets/images/QASolutions.png" alt="QASolutions" />
+            </div>
+            <div class="flex flex-col gap-1">
+              <h3 class="leading-[34px] text-xl font-bold">QA Solutions</h3>
+              <p class="leading-[30px] text-base font-medium text-[#717680]">
+                Ensure performance with rigorous testing frameworks.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="pb-5 px-5 border border-[#dcdcdc] rounded-2xl">
+          <div class="flex flex-col gap-5 mt-[-30px]">
+            <div><img src="/assets/images/IT Consulting & Support.png" alt="IT Consulting & Support"/></div>
+            <div class="flex flex-col gap-1">
+              <h3 class="leading-[34px] text-xl font-bold">
+                IT Consulting & Support
+              </h3>
+              <p class="leading-[30px] text-base font-medium text-[#717680]">
+                Make smarter tech decisions with expert guidance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 6.Service Section End -->
+
+    <!-- 7.Built for Your Industry Section Start -->
+    <section class="flex flex-col gap-16 py-20 px-[140px] bg-white dark:bg-black text-black dark:text-white w-full">
+      <div class="flex flex-col gap-[11px]">
+        <h2 class="leading-14 text-[40px] font-bold">
+          Built for Your Industry
+        </h2>
+        <p class="leading-8 text-[18px] font-medium text-[#717680]">
+          We’ve helped companies across industries launch smarter, faster, and
+          more securely.
+        </p>
+      </div>
+      <div class="flex gap-16">
+        <div class="flex flex-col gap-6 basis-[256px]">
+          <div class="flex gap-2">
+            <div class="basis-1 h-full bg-[#ff623e] rounded-[100px]"></div>
+            <h3 class="leading-[34px] text-xl font-bold">Fintech</h3>
+          </div>
+          <div class="flex gap-2">
+            <div class="basis-1 h-full bg-[#aaa] rounded-[100px]"></div>
+            <h3 class="leading-[34px] text-xl font-bold">E-Commerce</h3>
+          </div>
+          <div class="flex gap-2">
+            <div class="basis-1 h-full bg-[#aaa] rounded-[100px]"></div>
+            <h3 class="leading-[34px] text-xl font-bold">Healtcare</h3>
+          </div>
+        </div>
+        <div class="flex flex-col gap-5 grow">
+          <p class="leading-8 text-lg font-medium">
+            We build secure, scalable, and compliant fintech solutions — from
+            digital wallets to core banking systems — tailored to modern
+            financial needs.
+          </p>
+          <img class="rounded-3xl" src="/assets/images/Industry Image.png" />
+        </div>
+      </div>
+    </section>
+    <!-- 7.Built for Your Industry Section End -->
+
+    <!-- 8.Portfolio Section Start -->
+    <section class="flex flex-col py-20 px-[140px] gap-16 bg-white dark:bg-black text-black dark:text-white w-full">
+      <div class="flex flex-col gap-[11px] text-center">
+        <h2 class="leading-14 text-[40px] font-bold">
+          From Vision to Launch! Projects We’re Proud Of
+        </h2>
+        <p class="leading-8 text-[18px] font-medium text-[#717680]">
+          Take a closer look at our recent work powering startups, enterprises,
+          and everything in between.
+        </p>
+      </div>
+      <div class="flex gap-5 justify-center">
+        <div class="flex flex-col gap-3">
+          <img src="/assets/images/portfolio1.png" />
+          <div class="flex flex-col">
+            <h3 class="leading-[30px] text-base font-medium text-[#ff623e]">
+              Landing Page
+            </h3>
+            <p class="leading-[34px] text-xl font-bold">Portofolio 1</p>
+          </div>
+        </div>
+        <div class="flex flex-col gap-3">
+          <img src="/assets/images/portfolio2.png" />
+          <div class="flex flex-col">
+            <h3 class="leading-[30px] text-base font-medium text-[#ff623e]">
+              Landing Page
+            </h3>
+            <p class="leading-[34px] text-xl font-bold">Portofolio 2</p>
+          </div>
+        </div>
+        <div class="flex flex-col gap-3">
+          <img src="/assets/images/portfolio3.png" />
+          <div class="flex flex-col">
+            <h3 class="leading-[30px] text-base font-medium text-[#ff623e]">
+              Landing Page
+            </h3>
+            <p class="leading-[34px] text-xl font-bold">Portofolio 3</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 8.Portfolio Section End -->
+    
+    <!-- 9.Testimony Section Start -->
+    <section class="flex flex-col gap-20 py-20  bg-white dark:bg-black text-black dark:text-white w-full">
+      <div class="flex flex-col gap-[11px] text-center">
+        <h2 class="leading-14 text-[40px] font-bold">
+          What Partners Say About Working With Us
+        </h2>
+        <p class="leading-8 text-[18px] font-medium text-[#717680]">
+          Trusted voices. Real experiences. Proven results.
+        </p>
+      </div>
+      <div class="relative overflow-x-hidden h-[432px]">
+        <div class="flex gap-5 w-[127%] mt-[18px] ml-[-13.5%]">
+          <div
+            class="h-[292px] p-[1px] bg-gradient-to-br from-[#ff6c37] to-100% to-[#dedcdc] rounded-[18px]"
+          >
+            <div class="relative h-full bg-[#fafafa] dark:bg-[#0A0D12] rounded-2xl">
+              <div class="flex flex-col gap-6 pt-6 px-6">
+                <div class="flex flex-col gap-3 items-center">
+                  <div class="flex gap-1">
+                    <img src="/assets/images/line-md_star-filled.png" />
+                    <img src="/assets/images/line-md_star-filled.png" />
+                    <img src="/assets/images/line-md_star-filled.png" />
+                    <img src="/assets/images/line-md_star-filled.png" />
+                    <img src="/assets/images/line-md_star-filled.png" />
+                  </div>
+                  <p
+                    class="basis-[96px] leading-8 text-lg font-semibold text-center"
+                  >
+                    “Working with this team was a game-changer for our project.
+                    They understood our vision and turned it into reality
+                    efficiently and effectively.”
+                  </p>
+                </div>
+                <div class="flex flex-col items-center">
+                  <h3 class="leading-8 text-lg font-semibold">John Lee</h3>
+                  <p class="leading-8 text-lg font-semibold text-[#ff623e]">
+                    Creative Director at Innovate Corp
+                  </p>
+                </div>
+                <div class="basis-[75px]">
+                  <img class="mx-auto" src="/assets/images/johnlee.png" />
+                </div>
+              </div>
+              <div class="absolute top-[-18px] left-10 w-[46px]">
+                <img src="./images/Vector.png" />
+              </div>
+            </div>
+          </div>
+          <div
+            class="h-[292px] p-[1px] bg-gradient-to-br from-[#ff6c37]  to-100% to-[#dedcdc] rounded-[18px]"
+          >
+            <div class="relative h-full bg-[#fafafa] rounded-2xl dark:bg-[#0A0D12]">
+              <div class="flex flex-col gap-6 pt-6 px-6">
+                <div class="flex flex-col gap-3 items-center">
+                  <div class="flex gap-1">
+                    <img src="/assets/images/line-md_star-filled.png" />
+                    <img src="/assets/images/line-md_star-filled.png" />
+                    <img src="/assets/images/line-md_star-filled.png" />
+                    <img src="/assets/images/line-md_star-filled.png" />
+                    <img src="/assets/images/line-md_star-filled.png" />
+                  </div>
+                  <p
+                    class="basis-[96px] leading-8 text-lg font-semibold text-center"
+                  >
+                    “The team delivered exactly what we needed — on time and
+                    with outstanding quality. Their attention to detail and
+                    communication were top-notch.”
+                  </p>
+                </div>
+                <div class="flex flex-col items-center">
+                  <h3 class="leading-8 text-lg font-semibold">Sarah Tan</h3>
+                  <p class="leading-8 text-lg font-semibold text-[#ff623e]">
+                    Product Manager at Finovate
+                  </p>
+                </div>
+                <div class="basis-[75px]">
+                  <img class="mx-auto" src="/assets/images/sarahtan.png" />
+                </div>
+              </div>
+              <div class="absolute top-[-18px] left-10 w-[46px]">
+                <img src="/assets/images/Vector.png" />
+              </div>
+            </div>
+          </div>
+          <div
+            class="h-[292px] p-[1px] bg-gradient-to-br from-[#ff6c37] to-100% to-[#dedcdc] rounded-[18px]"
+          >
+            <div class="relative h-full bg-[#fafafa] rounded-2xl dark:bg-[#0A0D12]">
+              <div class="flex flex-col gap-6 pt-6 px-6">
+                <div class="flex flex-col gap-3 items-center">
+                  <div class="flex gap-1">
+                    <img src="/assets/images/line-md_star-filled.png" />
+                    <img src="/assets/images/line-md_star-filled.png" />
+                    <img src="/assets/images/line-md_star-filled.png" />
+                    <img src="/assets/images/line-md_star-filled.png" />
+                    <img src="/assets/images/line-md_star-filled.png" />
+                  </div>
+                  <p
+                    class="basis-[96px] leading-8 text-lg font-semibold text-center"
+                  >
+                    “The collaboration was seamless, and the results surpassed
+                    our expectations. Their expertise transformed our ideas into
+                    a successful product.”
+                  </p>
+                </div>
+                <div class="flex flex-col items-center">
+                  <h3 class="leading-8 text-lg font-semibold">Emily Chen</h3>
+                  <p class="leading-8 text-lg font-semibold text-[#ff623e]">
+                    Marketing Head at Tech Solutions
+                  </p>
+                </div>
+                <div class="basis-[75px]">
+                  <img class="mx-auto" src="/assets/images/emilychen.png" />
+                </div>
+              </div>
+              <div class="absolute top-[-18px] left-10 w-[46px]">
+                <img src="/assets/images/Vector.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="absolute h-[392px] w-[30%] top-0 left-0 bg-gradient-to-r from-white to-100% to-[rgba(255, 255, 255, 0)]"
+        ></div>
+        <div
+          class="absolute h-[392px] w-[30%] top-0 right-0 bg-gradient-to-l from-white to-100% to-[rgba(255, 255, 255, 0)]"
+        ></div>
+        <ul class="mt-[100px] flex justify-center">
+          <li class="basis-[12px] h-3 bg-[#ff6c37] rounded-full"></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </section>
+    <!-- 9.Testimony Section End -->
+    
+    <!-- 10.Ask me Section Start -->
+    <section class="flex flex-col gap-12 py-20 px-[120px]  bg-white dark:bg-black text-black dark:text-white w-full">
+      <div class="flex justify-between">
+        <h2 class="basis-[331px] leading-14 text-[40px] font-bold">
+          Need Help? Start Here.
+        </h2>
+        <p class="basis-[245px] leading-8 text-lg font-medium">
+          Everything you need to know — all in one place.
+        </p>
+      </div>
+      <div class="h-[1px] bg-[#dfdfdf]"></div>
+      <div class="flex gap-[73px]">
+        <div class="flex flex-col gap-7 grow">
+          <div class="flex flex-col gap-4">
+            <div class="flex justify-between">
+              <h3 class="leading-9 text-2xl font-bold">
+                What services do you offer?
+              </h3>
+              <div class="basis-[24px]">
+                <img src="/assets/images/Icon.png" />
+              </div>
+            </div>
+            <p class="leading-[34px] text-xl font-medium text-[#717680]">
+              We provide custom web/app development, cloud solutions, UX/UI
+              design, and more.
+            </p>
+          </div>
+          <div class="h-[1px] bg-[#dfdfdf]"></div>
+          <div class="flex flex-col gap-4">
+            <div class="flex justify-between">
+              <h3 class="leading-9 text-2xl font-bold">
+                How do I know if this is right for my business?
+              </h3>
+              <div class="basis-[24px]">
+                <img src="/assets/images/Icon(1).png" />
+              </div>
+            </div>
+          </div>
+          <div class="h-[1px] bg-[#dfdfdf]"></div>
+          <div class="flex flex-col gap-4">
+            <div class="flex justify-between">
+              <h3 class="leading-9 text-2xl font-bold">
+                How much does a project cost?
+              </h3>
+              <div class="basis-[24px]">
+                <img src="/assets/images/Icon(1).png" />
+              </div>
+            </div>
+          </div>
+          <div class="h-[1px] bg-[#dfdfdf]"></div>
+          <div class="flex flex-col gap-4">
+            <div class="flex justify-between">
+              <h3 class="leading-9 text-2xl font-bold">
+                How long does it take?
+              </h3>
+              <div class="basis-[24px]">
+                <img src="/assets/images/Icon(1).png" />
+              </div>
+            </div>
+          </div>
+          <div class="h-[1px] bg-[#dfdfdf]"></div>
+          <div class="flex flex-col gap-4">
+            <div class="flex justify-between">
+              <h3 class="leading-9 text-2xl font-bold">
+                Can I start with a small project first?
+              </h3>
+              <div class="basis-[24px]">
+                <img src="/assets/images/Icon(1).png" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex flex-col gap-6 basis-[329px] bg-[#cc4e32] p-6 rounded-3xl"
+        >
+          <div class="flex flex-col gap-1 text-white">
+            <h3 class="leading-11 text-4xl font-bold">Let’s talk it through</h3>
+            <p class="leading-8 text-lg font-semibold">
+              book a free consultation with our team.
+            </p>
+          </div>
+          <img src="/assets/images/Consultation Image.png" />
+          <a
+            class="bg-black dark:bg-white dark:text-black p-2 leading-[30px] rounded-full text-white text-center font-bold"
+            href="#"
+            >Free Consultation</a
+          >
+        </div>
+      </div>
+    </section>
+    <!-- 10.Ask me Section End -->
+    
+    <!-- 11.Consumer's Contact  Section Start -->
+    <section class="flex flex-col gap-16 py-20 px-[140px]  bg-white dark:bg-black text-black dark:text-white w-full">
+      <div class="flex flex-col gap-[11px] text-center">
+        <h2 class="leading-14 text-[40px] font-bold">
+          Ready to Start? Let’s Talk.
+        </h2>
+        <p class="leading-8 text-[18px] font-medium text-[#717680]">
+          Tell us what you need, and we’ll get back to you soon.
+        </p>
+      </div>
+      <form class="w-[720px] mx-auto">
+        <fieldset class="flex flex-col gap-10">
+          <div class="flex flex-col gap-5">
+            <div class="flex flex-col gap-1.5">
+              <label class="leading-7 text-sm font-bold">Name</label>
+              <input
+                class="py-2 px-4 border border-[#dfdfdf] leading-[30px] rounded-xl"
+                type="text"
+                placeholder="Enter your name"
+              />
+            </div>
+            <div class="flex flex-col gap-1.5">
+              <label class="leading-7 text-sm font-bold">Email</label>
+              <input
+                class="py-2 px-4 border border-[#dfdfdf] leading-[30px] rounded-xl"
+                type="email"
+                placeholder="Enter your email"
+              />
+            </div>
+            <div class="flex flex-col gap-1.5">
+              <label class="leading-7 text-sm font-bold">Message</label>
+              <textarea
+                class="py-2 px-4 border border-[#dfdfdf] leading-[30px] rounded-xl"
+                rows="4"
+                placeholder="Enter your message"
+              ></textarea>
+            </div>
+            <div class="flex flex-col gap-1.5">
+              <label class="leading-7 text-sm font-bold">Services</label>
+              <div class="flex gap-[37px]">
+                <div class="basis-[232px] flex flex-col gap-4">
+                  <div class="flex gap-3 items-center">
+                    <input class="hidden" type="checkbox" />
+                    <div
+                      class="w-[20px] h-[20px] bg-[#ff623e] rounded-sm border border-[#dfdfdf]"
+                    >
+                      <img class="py-[3px] mx-auto" src="/assets/images/Checkbox.png" />
+                    </div>
+                    <p>Web Development</p>
+                  </div>
+                  <div class="flex gap-3 items-center">
+                    <input class="hidden" type="checkbox" />
+                    <div
+                      class="w-[20px] h-[20px] rounded-sm border border-[#dfdfdf]"
+                    ></div>
+                    <p>Mobile App Development</p>
+                  </div>
+                  <div class="flex gap-3 items-center">
+                    <input class="hidden" type="checkbox" />
+                    <div
+                      class="w-[20px] h-[20px] rounded-sm border border-[#dfdfdf]"
+                    ></div>
+                    <p>UI/UX Design</p>
+                  </div>
+                </div>
+                <div class="basis-[232px] flex flex-col gap-4">
+                  <div class="flex gap-3 items-center">
+                    <input class="hidden" type="checkbox" />
+                    <div
+                      class="w-[20px] h-[20px] rounded-sm border border-[#dfdfdf]"
+                    >
+                    </div>
+                    <p>Cloud Solutions</p>
+                  </div>
+                  <div class="flex gap-3 items-center">
+                    <input class="hidden" type="checkbox" />
+                    <div
+                      class="w-[20px] h-[20px] rounded-sm border border-[#dfdfdf]"
+                    ></div>
+                    <p>Software Development</p>
+                  </div>
+                  <div class="flex gap-3 items-center">
+                    <input class="hidden" type="checkbox" />
+                    <div
+                      class="w-[20px] h-[20px] rounded-sm border border-[#dfdfdf]"
+                    ></div>
+                    <p>Other</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="bg-[#ff623e] p-2 rounded-full leading-[30px] text-white font-bold"
+          >
+            Send
+          </button>
+        </fieldset>
+      </form>
+    </section>
+    <!-- 11.Consumer's Contact  Section End -->
+    
+    <!-- 12.Footer Start -->
+    <section class="py-10 px-[140px]  bg-white dark:bg-black text-black dark:text-white w-full">
+      <div
+        class="dark:bg-[#0A0D12] flex flex-col gap-[60px] p-10 bg-[#fafafa] border border-[#dfdfdf] rounded-3xl"
+      >
+        <div class="flex justify-between ">
+          <h2 class="basis-[281px] leading-11 text-4xl font-bold">
+            LET'S DISCUSS YOUR IDEAS
+          </h2>
+          <div class="flex h-[29.59px] w-[150px] pr-2 scale-150 font-bold">
+            <img class="w-109px pr-3 " src="/assets/images/logo-symbol.png" />Your Logo
+          </div>
+        </div>
+        <div class="basis-[1px] bg-[#dfdfdf]"></div>
+        <div class="flex justify-between">
+          <ul class="flex">
+            <li><a class="block py-2 px-4 rounded-full" href="#">About</a></li>
+            <li>
+              <a class="block py-2 px-4 rounded-full" href="#">Service</a>
+            </li>
+            <li>
+              <a class="block py-2 px-4 rounded-full" href="#">Projects</a>
+            </li>
+            <li>
+              <a class="block py-2 px-4 rounded-full" href="#">Testimonials</a>
+            </li>
+            <li><a class="block py-2 px-4 rounded-full" href="#">FAQ</a></li>
+          </ul>
+          <ul class="flex gap-4">
+            <li>
+              <a
+                class="block w-10 h-10 border border-[#dfdfdf] py-[9.5px] rounded-full filter invert dark:filter-none"
+                href="#"
+                ><img class="mx-auto" src="/assets/images/fb.png"
+              /></a>
+            </li>
+
+            <li>
+              <a
+                class="block w-10 h-10 border border-[#dfdfdf] py-[9.5px] rounded-full filter invert dark:filter-none"
+                href="#"
+                ><img class="mx-auto" src="/assets/images/ig.png"
+              /></a>
+            </li>
+            <li>
+              <a
+                class="block w-10 h-10 border border-[#dfdfdf] py-[9.5px] rounded-full filter invert dark:filter-none"
+                href="#"
+                ><img class="mx-auto" src="/assets/images/linkeid.png"
+              /></a>
+            </li>
+            <li>
+              <a
+                class="block w-10 h-10 border border-[#dfdfdf] py-[9.5px] rounded-full filter invert dark:filter-none"
+                href="#"
+                ><img class="mx-auto" src="/assets/images/tiktok.png"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- 12.Footer End -->
+    
   </body>
 </html>
