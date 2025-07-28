@@ -16,7 +16,6 @@
     animation: scroll-left 10s linear infinite;
   }
 
-/* Tambahkan animasi kustom di layer utilities */
 @layer utilities {
   /* Kelas font Inter */
   .font-inter {
