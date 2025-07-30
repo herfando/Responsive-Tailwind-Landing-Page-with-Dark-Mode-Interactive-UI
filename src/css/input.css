@@ -1,5 +1,4 @@
 @import "tailwindcss";
-
 /* DARK MODE */
 @custom-variant dark (&:where(.dark, .dark * ));
 
@@ -16,17 +15,113 @@
     animation: scroll-left 10s linear infinite;
   }
 
-@layer utilities {
-  /* Kelas font Inter */
-  .font-inter {
-    font-family: "Inter", sans-serif;
-  }
+@layer components {  
   /* Display mobile */
-    @media (max-width: 639px) {
-    .max-sm\:custom-style {
-      /* Contoh style, ubah sesukamu di HTML */
-      scale: 0.5;
+  @media (max-width: 393px) {
+    .toggle {
+      transform: scale(0.4);
+      margin-left: -30px;
     }
-  }
-}
+    .logo {   
+      margin-left:-30px;
+    }
+    .your-logo { 
+      width: 130px;
+    }
+    .menu {
+      visibility: hidden;
+    }
+    .btn-header {
+      visibility: hidden;
+    }
+    /* === Add CSS Hamburger Menu Mobile === */
+    .menu-toggle {
+      display: none;
+    }
+    .hamburger {
+      width: 20px;
+      height: 15px;
+      position: relative;
+      cursor: pointer;
+      display: inline-block;
+      margin-right: 20px;
+    }
+    .hamburger span {
+      background: white;
+      position: absolute;
+      height: 3px;
+      width: 100%;
+      transition: 0.3s;
+      left: 0;
+    }
+    .hamburger span:nth-child(1) {
+      top: 0;
+    }
+    .hamburger span:nth-child(2) {
+      top: 8px;
+    }
+    .hamburger span:nth-child(3) {
+      top: 16px;
+    }
+    /* When menu-toggle is checked */
+    .menu-toggle:checked + .hamburger span:nth-child(1) {
+      transform: rotate(45deg);
+      top: 8px;
+    }
+    .menu-toggle:checked + .hamburger span:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-toggle:checked + .hamburger span:nth-child(3) {
+      transform: rotate(-45deg);
+      top: 8px;
+    }
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 84px;
+      background-color: white;
+      width: 100%;
+      height: 304px;
+      padding: 20px 0;
+      z-index: 1000;
+      gap: 15px;
+      color: black;
+    }
+    .mobile-menu a {
+      text-decoration: none;
+      font-size: 18px;
+      font-family: Font family/font-family-body;
+      padding-left: 20px;
+    }
+    .mobile-button {
+      background-color: #FF623E;
+      border: none;
+      border-radius: 24px;
+      padding: 10px 20px;
+      color: white;
+      font-size: 16px;
+      width: 361px;
+      height: 44px;
+      margin: auto;
+      cursor: pointer;
+    }
+    .mobile-button:hover {
+      background-color: lightblue;
+      color: black;
+    }
+    .mobile-menu.show {
+      display: flex;
+    }
+  /* === Add hamburger End === */
+    
+   /* Text Your Tech Partner for Smarter Growth */
+    .hero-teks1 {
+      font-size: 20px;
 
+    }
+
+
+
+    }
+}
