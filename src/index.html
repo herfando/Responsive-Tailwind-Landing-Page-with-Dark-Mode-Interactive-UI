@@ -7,37 +7,38 @@
     <link rel="stylesheet" href="./css/output.css" />
   </head>
   <body class="font-family/font-family-display text-[#0a0d12]">
-    <!-- 1.Header Start-->
-    <header  class=" fixed top-0 left-0 w-full h-21 z-30 flex items-center justify-around bg-white/70 backdrop-blur-md dark:bg-black/70 dark:text-white shadow-md">
+    
+    <!-- 1. Header Start -->
+    <header class="fixed top-0 left-0 w-full h-21 z-30 flex items-center justify-around bg-white/70 backdrop-blur-md dark:bg-black/70 dark:text-white shadow-md">
       <nav class="flex cursor-pointer">
-      <!-- Toggle dark mode -->
-      <button id="theme-toggle" class="toggle cursor-pointer text-sm font-bold px-4 py-2 bg-gray-200 dark:bg-gray-700 text-black dark:text-white rounded-4xl">dark/light</button>
-
-          <script>
-            // Cek preferensi yang tersimpan
-            if (localStorage.getItem("theme") === "dark") {
-              document.documentElement.classList.add("dark");
-            } else if (localStorage.getItem("theme") === "light") {
-              document.documentElement.classList.remove("dark");
-            } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-              document.documentElement.classList.add("dark");
+        <!-- Toggle dark mode -->
+        <button id="theme-toggle" class="toggle cursor-pointer text-sm font-bold px-4 py-2 bg-gray-200 dark:bg-gray-700 text-black dark:text-white rounded-4xl">
+          dark/light
+        </button>
+        <script>
+          if (localStorage.getItem("theme") === "dark") {
+            document.documentElement.classList.add("dark");
+          } else if (localStorage.getItem("theme") === "light") {
+            document.documentElement.classList.remove("dark");
+          } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            document.documentElement.classList.add("dark");
+          }
+          document.getElementById("theme-toggle").addEventListener("click", () => {
+            document.documentElement.classList.toggle("dark");
+            if (document.documentElement.classList.contains("dark")) {
+              localStorage.setItem("theme", "dark");
+            } else {
+              localStorage.setItem("theme", "light");
             }
-
-            // Toggle mode gelap dan simpan preferensi
-            document.getElementById("theme-toggle").addEventListener("click", () => {
-              document.documentElement.classList.toggle("dark");
-              if (document.documentElement.classList.contains("dark")) {
-                localStorage.setItem("theme", "dark");
-              } else {
-                localStorage.setItem("theme", "light");
-              }
-            });
-          </script>
-      <!-- Logo -->
-      <img class="pl-4 logo" src="/assets/images/logo-symbol.png" alt="your logo" />
-      <div class="your-logo items-center flex pl-2 font-bold">Your Logo</div>
+          });
+        </script>
+        <!-- Logo -->
+        <a href="#" class="flex items-center pl-4">
+          <img class="logo" src="/assets/images/logo-symbol.png" alt="your logo" />
+          <span class="your-logo flex items-center pl-2 font-bold">Your Logo</span>
+        </a>
       </nav>
-      <!-- Menu -->
+      <!-- Navigation Menu -->
       <nav class="menu space-x-5 cursor-pointer xs:custom-header-nav">
         <a href="#About">About</a>
         <a href="#Service">Service</a>
@@ -46,8 +47,10 @@
         <a href="#FAQ">FAQ</a>
       </nav>
       <!-- Button Let's Talk -->
-      <button onclick="scrollToSection('Form')" class="btn-header active:bg-blue-400 bg-[#FF623E] w-49.25 h-11 rounded-full text-white cursor-pointer">Let's Talk</button>
-
+      <button onclick="scrollToSection('Form')" class="btn-header active:bg-blue-400 bg-[#FF623E] w-49.25 h-11 rounded-full text-white cursor-pointer">
+        Let's Talk
+      </button>
+      <!-- Hamburger Menu -->
       <label class="hidden max-[393px]:block">
         <input type="checkbox" class="menu-toggle" />
         <div class="hamburger filter invert dark:filter-none">
@@ -57,133 +60,130 @@
         </div>
       </label>
     </header>
-      <div class="mobile-menu dark:bg-black dark:text-white fixed bg-white/70 backdrop-blur-md dark:bg-black/70 dark:text-white shadow-md" id="mobileMenu">
-        <a href="#">About</a>
-        <a href="#">Service</a>
-        <a href="#">Portolio</a>
-        <a href="#">Testimonials</a>
-        <a href="#">FAQ</a>
-        <button onclick="scrollToSection('Form')" class="mobile-button">Let's Talk</button>
-      </div>
-    <!-- 1.Header End-->
+    <!-- Mobile Menu -->
+    <nav id="mobileMenu" class="mobile-menu fixed bg-white/70 backdrop-blur-md dark:bg-black/70 dark:text-white shadow-md">
+      <a href="#">About</a>
+      <a href="#">Service</a>
+      <a href="#">Portolio</a>
+      <a href="#">Testimonials</a>
+      <a href="#">FAQ</a>
+      <button onclick="scrollToSection('Form')" class="mobile-button">Let's Talk</button>
+    </nav>
+    <!-- 1. Header End -->
 
-    <!-- 2.Hero Section Start -->
-        <section id="About" class="items-center justify-center min-h-screen dark:bg-black w-full flex max-[393px]:flex-col overflow-hidden">
-          
-          <!-- Text -->
-          <article class="p-4">
-            <h1 class="max-[393px]:text-[35px] max-[393px]:pt-[100px] text-6xl font-bold pb-4 text-black dark:text-white">
-              Your Tech Partner for <br />
-              <span class="text-[#FF6C37]">Smarter Growth</span>
-            </h1>
-            <h4 class="pb-8 text-black dark:text-white text-xl max-[393px]:text-[18px] max-[393px]:w-[361px]">
-              We deliver tailored IT solutions to help you scale with speed and confidence.
-            </h4>
-            
-            <!-- Button -->
-            <button onclick="scrollToSection('Form')" class="max-[393px]:w-[361px] active:bg-blue-400 text-white bg-[#FF623E] w-[200px] h-12 rounded-full cursor-pointer">
-              Let’s Talk
-            </button>
-          </article>
-
-          <!-- Gambar Light Mode -->
+    <!-- 2. Hero Section Start -->
+    <main>
+      <section id="About" class="items-center justify-center min-h-screen dark:bg-black w-full flex max-[393px]:flex-col overflow-hidden">
+        
+        <!-- Text Content -->
+        <article class="p-4">
+          <h1 class="max-[393px]:text-[35px] max-[393px]:pt-[100px] text-6xl font-bold pb-4 text-black dark:text-white">
+            Your Tech Partner for <br />
+            <span class="text-[#FF6C37]">Smarter Growth</span>
+          </h1>
+          <h2 class="pb-8 text-black dark:text-white text-xl max-[393px]:text-[18px] max-[393px]:w-[361px]">
+            We deliver tailored IT solutions to help you scale with speed and confidence.
+          </h2>
+          <!-- Call-to-action Button -->
+          <button onclick="scrollToSection('Form')" class="max-[393px]:w-[361px] active:bg-blue-400 text-white bg-[#FF623E] w-[200px] h-12 rounded-full cursor-pointer">
+            Let’s Talk
+          </button>
+        </article>
+        <!-- Light Mode Image -->
+        <figure>
           <img
             class="block dark:hidden h-[600px] w-auto max-[393px]:h-[391px] max-[393px]:pt-[20px] pt-[20px]"
             src="/assets/images/Image Hero light.png"
             alt="handphone light mode" />
-
-          <!-- Gambar Dark Mode -->
+        </figure>
+        <!-- Dark Mode Image -->
+        <figure>
           <img
             class="hidden dark:block h-[600px] w-auto max-[393px]:h-[391px] max-[393px]:pt-[20px] pt-[20px]"
             src="/assets/images/Image Hero dark.png"
             alt="handphone dark mode" />
-        </section>
-    <!-- 2.Hero Section End -->
+        </figure>
+      </section>
+    </main>
+    <!-- 2. Hero Section End -->
 
-    <!-- 3.Brand Section Start-->
-    <section id="Service" class="max-[393px]:h-[200px] relative z-20 items-center dark:bg-black w-full flex flex-col">
-      <h3 class="max-[393px]:pl-3 max-[393px]:w-[393px] max-[393px]:pt-[20px] max-[393px]:text-[16px] max-[393px]:font-bold text-xl mb-2 pb-13 dark:text-white">
-        Trusted by Global Innovators & Leading Brands
-      </h3>
-      <div class="max-[393px]:w-[1500px] flex grayscale overflow-hidden w-full whitespace-nowrap animate-scroll-left space-x-10">
-        <img
-          class="h-10 w-auto"
-          src="/assets/images/adobe.png"
-          alt="adobe company"
-        />
-        <img
-          class="h-10 w-auto"
-          src="/assets/images/upwork.png"
-          alt="upwork company"/>
-        <img
-          class="h-10 w-auto"
-          src="/assets/images/zoom.png"
-          alt="zoom company"/>
-        <img
-          class="h-10 w-auto"
-          src="/assets/images/postman.png"
-          alt="postman company"/>
-        <img
-          class="h-10 w-auto"
-          src="/assets/images/databricks.png"
-          alt="databricks company"/>
-        <img
-          class="h-10 w-auto"
-          src="/assets/images/airbnb.png"
-          alt="airbnb company"/>
-        <img
-          class="h-10 w-auto"
-          src="/assets/images/dropbox.png"
-          alt="dropbox company"/>
-        <img
-          class="h-10 w-auto"
-          src="/assets/images/paypal.png"
-          alt="paypal company"/>
-        <img
-          class="h-10 w-auto"
-          src="/assets/images/netflix.png"
-          alt="netflix company"/>
-      </div>
-    </section>
-    <!-- 3.Brand Section End-->
+    <!-- 3. Brand Section Start -->
+      <section id="Service" class="max-[393px]:h-[200px] relative z-20 items-center dark:bg-black w-full flex flex-col">
+        <h3 class="max-[393px]:pl-3 max-[393px]:w-[393px] max-[393px]:pt-[20px] max-[393px]:text-[16px] max-[393px]:font-bold text-xl mb-2 pb-13 dark:text-white">
+          Trusted by Global Innovators & Leading Brands
+        </h3>
+        <div class="max-[393px]:w-[1500px] flex grayscale overflow-hidden w-full whitespace-nowrap animate-scroll-left space-x-10" role="list">
+          <figure>
+            <img class="h-10 w-auto" src="/assets/images/adobe.png" alt="adobe company" />
+          </figure>
+          <figure>
+            <img class="h-10 w-auto" src="/assets/images/upwork.png" alt="upwork company" />
+          </figure>
+          <figure>
+            <img class="h-10 w-auto" src="/assets/images/zoom.png" alt="zoom company" />
+          </figure>
+          <figure>
+            <img class="h-10 w-auto" src="/assets/images/postman.png" alt="postman company" />
+          </figure>
+          <figure>
+            <img class="h-10 w-auto" src="/assets/images/databricks.png" alt="databricks company" />
+          </figure>
+          <figure>
+            <img class="h-10 w-auto" src="/assets/images/airbnb.png" alt="airbnb company" />
+          </figure>
+          <figure>
+            <img class="h-10 w-auto" src="/assets/images/dropbox.png" alt="dropbox company" />
+          </figure>
+          <figure>
+            <img class="h-10 w-auto" src="/assets/images/paypal.png" alt="paypal company" />
+          </figure>
+          <figure>
+            <img class="h-10 w-auto" src="/assets/images/netflix.png" alt="netflix company" />
+          </figure>
+        </div>
+      </section>
+    <!-- 3. Brand Section End -->
 
-    <!-- 4.Achievement Section Start-->
-    <section id="Projects" class=" flex flex-col items-center w-full dark:bg-black h-[598px] max-[393px]:h-[558px] pt-32 max-[393px]:pt-0">
-      <!-- Text -->
-      <article> 
-        <h2 class="text-4xl font-bold text-center dark:text-white max-[393px]:text-3xl">
-          End-to-End IT Solutions<span class="inline max-[393px]:block">That Drive Results</span>
-        </h2>
-        <h4 class=" pt-8 pb-24 text-xl text-[#717680] text-center max-[393px]:text-[15px] max-[393px]:pb-0">
-          From strategy to execution, we deliver solutions that <span class="inline max-[393px]:block">grow your
-          business.</span> 
-        </h4>
-      </article>
-        <!-- cicle -->
-      <article class=" dark:text-white flex space-x-10 max-[393px]:space-x-0 content-center items-center max-[393px]:grid max-[393px]:grid-cols-2 max-[393px]:gap-x-[240px] max-[393px]:gap-y-12 max-[393px]:place-items-center max-[393px]:scale-[0.65] max-[393px]:p-[20px] max-[393px]:mt-[-80px]">
-          <dl
-            class="h-[275px] w-[275px] border-4 border-[#DEDCDC] rounded-full grid justify-center text-center content-center">
-            <span class="text-[#FF623E] text-5xl font-bold">50+</span><br />
-            <span class="text-lg font-semibold">Projects Delivered</span>
+    <!-- 4. Achievement Section Start -->
+      <section id="Projects" class="flex flex-col items-center w-full dark:bg-black h-[598px] max-[393px]:h-[558px] pt-32 max-[393px]:pt-0">
+        
+        <!-- Text -->
+        <article>
+          <h2 class="text-4xl font-bold text-center dark:text-white max-[393px]:text-3xl">
+            End-to-End IT Solutions<span class="inline max-[393px]:block">That Drive Results</span>
+          </h2>
+          <h3 class="pt-8 pb-24 text-xl text-[#717680] text-center max-[393px]:text-[15px] max-[393px]:pb-0">
+            From strategy to execution, we deliver solutions that <span class="inline max-[393px]:block">grow your business.</span>
+          </h3>
+        </article>
+
+        <!-- Circle Stats -->
+        <article class="dark:text-white flex space-x-10 max-[393px]:space-x-0 content-center items-center max-[393px]:grid max-[393px]:grid-cols-2 max-[393px]:gap-x-[240px] max-[393px]:gap-y-12 max-[393px]:place-items-center max-[393px]:scale-[0.65] max-[393px]:p-[20px] max-[393px]:mt-[-80px]">
+          
+          <dl class="h-[275px] w-[275px] border-4 border-[#DEDCDC] rounded-full grid justify-center text-center content-center">
+            <dt class="text-[#FF623E] text-5xl font-bold">50+</dt>
+            <dd class="text-lg font-semibold">Projects Delivered</dd>
           </dl>
-          <dl
-            class="h-[275px] w-[275px] border-4 border-[#DEDCDC] rounded-full grid justify-center text-center content-center">
-            <span class="text-[#FF623E] text-5xl font-bold">5+</span><br />
-            <span class="text-lg font-semibold">Years of Experience</span>
+
+          <dl class="h-[275px] w-[275px] border-4 border-[#DEDCDC] rounded-full grid justify-center text-center content-center">
+            <dt class="text-[#FF623E] text-5xl font-bold">5+</dt>
+            <dd class="text-lg font-semibold">Years of Experience</dd>
           </dl>
-          <dl
-            class="h-[275px] w-[275px] border-4 border-[#DEDCDC] rounded-full grid justify-center text-center content-center">
-            <span class="text-[#FF623E] text-5xl font-bold">10+</span><br />
-            <span class="text-lg font-semibold">Industry Awards Won</span>
+
+          <dl class="h-[275px] w-[275px] border-4 border-[#DEDCDC] rounded-full grid justify-center text-center content-center">
+            <dt class="text-[#FF623E] text-5xl font-bold">10+</dt>
+            <dd class="text-lg font-semibold">Industry Awards Won</dd>
           </dl>
-          <dl
-            class="h-[275px] w-[275px] border-4 border-[#DEDCDC] rounded-full grid justify-center text-center content-center max-[393px]">
-            <span class="text-[#FF623E] text-5xl font-bold">100%</span><br />
-            <span class="text-lg font-semibold">Client Satisfaction Rate</span>
+
+          <dl class="h-[275px] w-[275px] border-4 border-[#DEDCDC] rounded-full grid justify-center text-center content-center">
+            <dt class="text-[#FF623E] text-5xl font-bold">100%</dt>
+            <dd class="text-lg font-semibold">Client Satisfaction Rate</dd>
           </dl>
-      </article>
-    </section>
-    <!-- 4.Achievement Section End-->
+
+        </article>
+      </section>
+      <!-- 4. Achievement Section End -->
+
 
     <!-- 5.Flow Process Section Start-->
     <section class="flex flex-col gap-16 py-20 max-[393px]:py-10 px-[140px] max-[393px]:px-3.5 bg-white dark:bg-black w-full">
@@ -194,9 +194,7 @@
           Clear steps. Smart execution. Results you can count on.
         </p>
       </div>
-
       <div class="relative grid grid-cols-[1fr_48px_1fr] max-[393px]:grid-cols-[48px_1fr] gap-4 items-center">
-
         <!-- Line 1 -->
         <div class="flex justify-between dark:bg-[#0A0D12] p-6 border dark:border-[#181D27] bg-[#FAFAFA] border-[#DEDCDC] rounded-2xl dark:text-white max-[393px]:order-2">
           <div class="flex flex-col cursor-pointer">
@@ -209,7 +207,6 @@
         </div>
         <div class="z-20 h-12 bg-[#ff623e] rounded-full leading-12 text-white text-center max-[393px]:order-1">1</div>
         <div class="max-[393px]:hidden"></div>
-
         <!-- Line 2 -->
         <div class="max-[393px]:hidden"></div>
         <div class="z-20 h-12 bg-[#ff623e] rounded-full leading-12 text-white text-center max-[393px]:order-3">2</div>
@@ -222,7 +219,6 @@
             <img class="w-8 h-3 scale-200 text-[#0A0D12] filter invert dark:filter-none" src="/assets/images/chevron-up.png" />
           </div>
         </div>
-
         <!-- Line 3 -->
         <div class="flex justify-between dark:bg-[#0A0D12] p-6 border dark:border-[#181D27] bg-[#FAFAFA] border-[#DEDCDC] rounded-2xl dark:text-white max-[393px]:order-6">
           <div class="flex flex-col cursor-pointer">
@@ -235,7 +231,6 @@
         </div>
         <div class="z-20 h-12 bg-[#ff623e] rounded-full leading-12 text-white text-center max-[393px]:order-5">3</div>
         <div class="max-[393px]:hidden"></div>
-
         <!-- Line 4 -->
         <div class="max-[393px]:hidden"></div>
         <div class="z-20 h-12 bg-[#ff623e] rounded-full leading-12 text-white text-center max-[393px]:order-7">4</div>
@@ -248,7 +243,6 @@
             <img class="w-8 h-3 scale-200 text-[#0A0D12] filter invert dark:filter-none" src="/assets/images/chevron-up.png" />
           </div>
         </div>
-
         <!-- Line 5 -->
         <div class="flex justify-between dark:bg-[#0A0D12] p-6 border dark:border-[#181D27] bg-[#FAFAFA] border-[#DEDCDC] rounded-2xl dark:text-white max-[393px]:order-10">
           <div class="flex flex-col cursor-pointer">
@@ -261,7 +255,6 @@
         </div>
         <div class="z-20 h-12 bg-[#ff623e] rounded-full leading-12 text-white text-center max-[393px]:order-9">5</div>
         <div class="max-[393px]:hidden"></div>
-
         <!-- Line 6 -->
         <div class="max-[393px]:hidden"></div>
         <div class="z-20 h-12 bg-[#ff623e] rounded-full leading-12 text-white text-center max-[393px]:order-11">6</div>
@@ -274,13 +267,11 @@
             <img class="w-8 h-3 scale-200 text-[#0A0D12] filter invert dark:filter-none" src="/assets/images/chevron-up.png" />
           </div>
         </div>
-
         <!-- Vertical Line -->
         <div class="absolute top-[8.5%] left-1/2 max-[393px]:left-[24px] -z-0 w-[1px] h-10/12 bg-[#DEDCDC] dark:bg-[#181D27]"></div>
       </div>
     </section>
     <!-- 5.Flow Process Section End -->
-
 
     <!-- 6.Service Section Start -->
     <section class="flex flex-col gap-16  py-20 px-[140px] max-[393px]:py-10  max-[393px]:px-3.5  dark:bg-black text-black dark:text-white w-full">
@@ -416,7 +407,6 @@
           We’ve helped companies across industries launch smarter, faster, and more securely.
         </p>
       </div>
-
       <!-- Konten Utama -->
       <div class="flex gap-16 max-[393px]:flex-col max-[393px]:gap-10">
         <!-- Kolom kiri: Daftar industri -->
@@ -434,7 +424,6 @@
             <h3 class="leading-[34px] text-xl font-bold">Healthcare</h3>
           </div>
         </div>
-
         <!-- Kolom kanan: Deskripsi & Gambar -->
         <div class="relative w-full">
           <!-- Fintech -->
@@ -444,7 +433,6 @@
             </p>
             <img class="rounded-3xl max-[393px]:h-[200px]" src="/assets/images/Industry Image.png" alt="Industry Image" />
           </div>
-
           <!-- E-Commerce -->
           <div id="ecommerce" class="industry-card flex flex-col gap-5 grow hidden">
             <p class="leading-8 text-lg font-medium max-[393px]:font-light">
@@ -452,7 +440,6 @@
             </p>
             <img class="rounded-3xl max-[393px]:h-[200px]" src="/assets/images/E-Commerce.png" alt="E-Commerce Image" />
           </div>
-
           <!-- Healthcare -->
           <div id="healthcare" class="industry-card flex flex-col gap-5 grow hidden">
             <p class="leading-8 text-lg font-medium max-[393px]:font-light">
@@ -463,8 +450,6 @@
         </div>
       </div>
     </section>
-    <!-- 7. Built for Your Industry Section End -->
-
     <!-- Script untuk interaksi -->
     <script>
       const tabs = document.querySelectorAll('.industry-tab');
@@ -488,11 +473,10 @@
         });
       });
     </script>
-
+    <!-- 7. Built for Your Industry Section End -->
 
     <!-- 8.Portfolio Section Start -->
     <section class="max-[393px]:py-10 max-[393px]:px-3.5 flex flex-col py-20 px-[140px] gap-16 bg-white dark:bg-black text-black dark:text-white w-full">
-
       <!-- Judul & Subjudul -->
       <div class="flex flex-col gap-[11px] text-center">
         <h2 class="leading-14 text-[40px] font-bold max-[393px]:text-3xl max-[393px]:font-medium">
@@ -502,10 +486,8 @@
           Take a closer look at our recent work powering startups, enterprises, and everything in between.
         </p>
       </div>
-
-      <!-- Konten Portofolio -->
+      <!-- Portofolio Contents-->
       <div class="flex gap-5 justify-center max-[393px]:flex-col max-[393px]:items-center max-[393px]:gap-10">
-
         <!-- Portofolio 1 -->
         <div class="flex flex-col gap-3 cursor-pointer">
           <img src="/assets/images/portfolio1.png" />
@@ -514,7 +496,6 @@
             <p class="leading-[34px] text-xl font-bold">Portofolio 1</p>
           </div>
         </div>
-
         <!-- Portofolio 2 -->
         <div class="flex flex-col gap-3 cursor-pointer">
           <img src="/assets/images/portfolio2.png" />
@@ -523,7 +504,6 @@
             <p class="leading-[34px] text-xl font-bold">Portofolio 2</p>
           </div>
         </div>
-
         <!-- Portofolio 3 -->
         <div class="flex flex-col gap-3 cursor-pointer">
           <img src="/assets/images/portfolio3.png" />
@@ -532,7 +512,6 @@
             <p class="leading-[34px] text-xl font-bold">Portofolio 3</p>
           </div>
         </div>
-
       </div>
     </section>
     <!-- 8.Portfolio Section End -->
@@ -548,12 +527,10 @@
           Trusted voices. Real experiences. Proven results.
         </p>
       </div>
-
       <!-- Card Container -->
       <div class="max-[393px]:pt-8 relative overflow-hidden max-[393px]:h-[483px] max-[393px]:pt-0 pt-[25px]">
         <!-- Slider Wrapper -->
-        <div id="testimonialSlider" class=" flex flex-nowrap gap-[925px] max-[393px]:gap-4 max-[393px]:pb-[60px] max-[393px]:w-max transition-transform duration-500 ease-in-out pl-[465px] max-[393px]:pl-0">
-          
+        <div id="testimonialSlider" class=" flex flex-nowrap gap-[925px] max-[393px]:gap-4 max-[393px]:pb-[60px] max-[393px]:w-max transition-transform duration-500 ease-in-out pl-[465px] max-[393px]:pl-0">        
           <!-- Card 1 -->
           <div class=" testimonial-card w-[594px] max-[393px]:w-[361px] max-[393px]:h-[284px] flex-shrink-0 h-[292px] p-[1px] bg-gradient-to-br from-[#ff6c37] to-[#dedcdc] rounded-[18px] relative" data-index="0">
             <div class="h-full bg-[#fafafa] dark:bg-[#0A0D12] rounded-2xl relative">
@@ -584,7 +561,6 @@
               </div>
             </div>
           </div>
-
           <!-- Card 2 -->
           <div class="testimonial-card w-[594px] max-[393px]:w-[361px] max-[393px]:h-[284px] flex-shrink-0 h-[292px] p-[1px] bg-gradient-to-br from-[#ff6c37] to-[#dedcdc] rounded-[18px] relative" data-index="1">
             <div class="h-full bg-[#fafafa] dark:bg-[#0A0D12] rounded-2xl relative">
@@ -614,7 +590,6 @@
               </div>
             </div>
           </div>
-
           <!-- Card 3 -->
           <div class="testimonial-card w-[594px] max-[393px]:w-[361px] max-[393px]:h-[284px] flex-shrink-0 h-[292px] p-[1px] bg-gradient-to-br from-[#ff6c37] to-[#dedcdc] rounded-[18px] relative" data-index="2">
             <div class="h-full bg-[#fafafa] dark:bg-[#0A0D12] rounded-2xl relative">
@@ -645,7 +620,6 @@
             </div>
           </div>
         </div>
-
         <!-- Dot Navigasi -->
         <ul class="mt-16 flex justify-center gap-2 max-[393px]:mt-20">
           <li><button class="dot w-3 h-3 rounded-full bg-[#ff6c37]" onclick="goToSlide(0)"></button></li>
@@ -655,28 +629,22 @@
       </div>
     </section>
     <!-- 9. Testimony Section End -->
-
       <!-- Script Geser Slider -->
       <script>
         let currentSlide = 0;
-
         function goToSlide(index) {
           const slider = document.getElementById('testimonialSlider');
           const cards = slider.querySelectorAll('.testimonial-card');
           const isMobile = window.innerWidth <= 393;
-
           currentSlide = index;
-
           if (isMobile) {
             const cardWidth = cards[0].offsetWidth + 16; // tambah jarak antar card (gap-4 = 16px)
             const containerWidth = slider.parentElement.offsetWidth;
             const offset = index * cardWidth - (containerWidth - cardWidth) / 2;
-
             slider.style.transform = `translateX(-${offset}px)`;
           } else {
             slider.style.transform = `translateX(-${index * 100}%)`;
           }
-
           document.querySelectorAll('.dot').forEach((dot, i) => {
             dot.classList.remove('bg-[#ff6c37]');
             dot.classList.add('bg-[#e5e5e5]');
@@ -686,7 +654,6 @@
             }
           });
         }
-
         window.addEventListener('resize', () => goToSlide(currentSlide));
       </script>
     
@@ -702,10 +669,8 @@
         </div>
         <!-- Garis atas -->
       <div class="h-[1px] bg-[#dfdfdf]"></div>
-
       <!-- Kontainer utama -->
       <div class="flex gap-[73px] max-[393px]:flex-col max-[393px]:gap-8">
-
     <!-- Kiri: FAQ -->
     <div class="flex flex-col gap-7 grow">
       <!-- Pertanyaan 1 -->
@@ -723,9 +688,7 @@
           design, and more.
         </p>
       </div>
-
       <div class="h-[1px] bg-[#dfdfdf]"></div>
-
       <!-- Pertanyaan 2 -->
       <div class="flex flex-col gap-4">
         <div class="flex justify-between">
@@ -737,9 +700,7 @@
           </div>
         </div>
       </div>
-
       <div class="h-[1px] bg-[#dfdfdf]"></div>
-
       <!-- Pertanyaan 3 -->
       <div class="flex flex-col gap-4">
         <div class="flex justify-between">
@@ -751,9 +712,7 @@
           </div>
         </div>
       </div>
-
       <div class="h-[1px] bg-[#dfdfdf]"></div>
-
       <!-- Pertanyaan 4 -->
       <div class="flex flex-col gap-4">
         <div class="flex justify-between">
@@ -765,9 +724,7 @@
           </div>
         </div>
       </div>
-
       <div class="h-[1px] bg-[#dfdfdf]"></div>
-
       <!-- Pertanyaan 5 -->
       <div class="flex flex-col gap-4">
         <div class="flex justify-between">
@@ -780,7 +737,6 @@
         </div>
       </div>
     </div>
-
     <!-- Kanan: Konsultasi -->
     <div class="flex flex-col gap-6 basis-[329px] bg-[#cc4e32] p-6 rounded-3xl">
       <div class="flex flex-col gap-1 text-white">
@@ -797,9 +753,11 @@
   </div>
       </section>
       <!-- 10.Ask me Section End -->
-    
+
     <!-- 11.Consumer's Contact Section Start -->
-    <section id="Form" class="flex flex-col gap-16 py-20 px-[140px] max-[393px]:px-4 bg-white dark:bg-black text-black dark:text-white w-full">
+    <!-- Overlay blur untuk latar belakang saat popup muncul -->
+    <div id="overlayBlur" class="hidden fixed inset-0 z-40 bg-black/30 backdrop-blur-sm dark:bg-black/60"></div>
+    <section id="Form" class="relative flex flex-col gap-16 py-20 px-[140px] max-[393px]:px-4 bg-white dark:bg-black text-black dark:text-white w-full">
       <!-- Judul dan deskripsi -->
       <div class="flex flex-col gap-[11px] text-center">
         <h2 class="leading-14 text-[40px] font-bold max-[393px]:text-[28px]">
@@ -809,9 +767,8 @@
           Tell us what you need, and we’ll get back to you soon.
         </p>
       </div>
-
       <!-- Formulir utama -->
-      <form class="w-[720px] mx-auto max-[393px]:w-full">
+      <form id="contactForm" class="w-[720px] mx-auto max-[393px]:w-full">
         <fieldset class="flex flex-col gap-10">
           <!-- Input data -->
           <div class="flex flex-col gap-5">
@@ -819,36 +776,35 @@
             <div class="flex flex-col gap-1.5">
               <label class="leading-7 text-sm font-bold">Name</label>
               <input
+                id="nameInput"
                 class="hover:bg-blue-300 py-2 px-4 border border-[#dfdfdf] leading-[30px] rounded-xl"
                 type="text"
                 placeholder="Enter your name"
               />
             </div>
-
             <!-- Input Email -->
             <div class="flex flex-col gap-1.5">
               <label class="leading-7 text-sm font-bold">Email</label>
               <input
+                id="emailInput"
                 class="hover:bg-blue-300 py-2 px-4 border border-[#dfdfdf] leading-[30px] rounded-xl"
                 type="email"
                 placeholder="Enter your email"
               />
             </div>
-
             <!-- Input Pesan -->
             <div class="flex flex-col gap-1.5">
               <label class="leading-7 text-sm font-bold">Message</label>
               <textarea
+                id="messageInput"
                 class="hover:bg-blue-300 py-2 px-4 border border-[#dfdfdf] leading-[30px] rounded-xl"
                 rows="4"
                 placeholder="Enter your message"
               ></textarea>
             </div>
-
             <!-- Pilihan layanan -->
             <div class="flex flex-col gap-1.5">
               <label class="leading-7 text-sm font-bold">Services</label>
-
               <!-- Grid 2 kolom di desktop, 1 kolom di mobile -->
               <div class="flex gap-[37px] max-[393px]:flex-col max-[393px]:gap-[0px]">
                 <!-- Kolom kiri -->
@@ -866,7 +822,6 @@
                     <span>UI/UX Design</span>
                   </label>
                 </div>
-
                 <!-- Kolom kanan -->
                 <div class="basis-[232px] flex flex-col gap-4 max-[393px]:basis-[0px] max-[393px]:mt-4">
                   <label class="flex gap-3 items-center">
@@ -885,9 +840,9 @@
               </div>
             </div>
           </div>
-
           <!-- Tombol Kirim -->
           <button
+            id="sendBtn"
             class="active:bg-blue-400 bg-[#ff623e] p-2 rounded-full leading-[30px] text-white font-bold cursor-pointer"
           >
             Send
@@ -895,32 +850,84 @@
         </fieldset>
       </form>
     </section>
-    <!-- 11.Consumer's Contact Section End -->    
-
+    <!-- popup message received -->
+    <dialog id="successPopup" class="hidden z-50 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto items-center rounded-2xl grid grid-cols-1 place-items-center place-content-center">
+      <div class="max-[393px]:h-[160px] max-[393px]:w-[353px] rounded-t-3xl h-[225px] w-[518px] dark:bg-[#0A0D12] items-center grid place-items-center">
+        <img class="mb-6 max-[393px]:h-[140px] max-[393px]:w-[140px]" src="/assets/images/Message received.png" alt="message received">
+      </div>
+      <div class="max-[393px]:h-[214px] max-[393px]:w-[353px] rounded-b-3xl bg-[#FFFFFF] dark:bg-[#000000] h-[254px] w-[518px] grid grid-cols-1 place-items-center place-content-center">
+        <p class="w-[400px] max-[393px]:w-[305px] dark:text-[#FDFDFD] font-bold text-center max-[393px]:text-xl text-2xl">
+          Message Received!<br>
+          <span class="text-[#717680] font-medium text-xl max-[393px]:text-base">
+            Thanks for reaching out — we’ll get back to you as soon as possible.
+          </span>
+        </p>
+        <button class="text-[#FFFFFF] bg-[#FF623E] font-bold max-[393px]:w-[305px] w-[361px] h-[48px] rounded-full mt-10">Back to Home</button>
+      </div>
+    </dialog>
+    <!-- popup message not received -->
+    <dialog id="errorPopup" class="hidden z-50 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto items-center rounded-2xl grid grid-cols-1 place-items-center place-content-center">
+      <div class="max-[393px]:h-[160px] max-[393px]:w-[353px] rounded-t-3xl h-[225px] w-[518px] dark:bg-[#0A0D12] items-center grid place-items-center">
+        <img class="mb-6 max-[393px]:h-[140px] max-[393px]:w-[140px]" src="/assets/images/Message not received.png" alt="message not received">
+      </div>
+      <div class="max-[393px]:h-[214px] max-[393px]:w-[353px] rounded-b-3xl bg-[#FFFFFF] dark:bg-[#000000] h-[254px] w-[518px] grid grid-cols-1 place-items-center place-content-center">
+        <p class="w-[400px] max-[393px]:w-[305px] dark:text-[#FDFDFD] font-bold text-center max-[393px]:text-xl text-2xl">
+          Oops! Something went wrong.<br>
+          <span class="text-[#717680] font-medium text-xl max-[393px]:text-base">
+            We couldn’t send your message. Please try again or check your connection.
+          </span>
+        </p>
+        <button class="text-[#FFFFFF] bg-[#FF623E] font-bold max-[393px]:w-[305px] w-[361px] h-[48px] rounded-full mt-10">Back to Home</button>
+      </div>
+    </dialog>
+    <!-- Script validasi form + kontrol popup -->
+    <script>
+      document.getElementById("sendBtn").addEventListener("click", function (e) {
+        e.preventDefault();
+        const name = document.getElementById("nameInput").value.trim();
+        const email = document.getElementById("emailInput").value.trim();
+        const message = document.getElementById("messageInput").value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const successPopup = document.getElementById("successPopup");
+        const errorPopup = document.getElementById("errorPopup");
+        const overlay = document.getElementById("overlayBlur");
+        if (name && emailRegex.test(email) && message) {
+          successPopup.classList.remove("hidden");
+          overlay.classList.remove("hidden");
+          document.getElementById("contactForm").reset();
+        } else {
+          errorPopup.classList.remove("hidden");
+          overlay.classList.remove("hidden");
+        }
+      });
+      document.querySelectorAll("dialog button").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          document.getElementById("successPopup").classList.add("hidden");
+          document.getElementById("errorPopup").classList.add("hidden");
+          document.getElementById("overlayBlur").classList.add("hidden");
+        });
+      });
+    </script>
+    <!-- 11.Consumer's Contact Section End -->
+    
     <!-- 12. Footer Start -->
-<section class="py-10 px-[140px] max-[393px]:px-4 bg-white dark:bg-black text-black dark:text-white w-full">
-  <div class="dark:bg-[#0A0D12] flex flex-col gap-[60px] p-10 max-[393px]:p-6 bg-[#fafafa] border border-[#dfdfdf] rounded-3xl">
-
+    <section class="py-10 px-[140px] max-[393px]:px-4 bg-white dark:bg-black text-black dark:text-white w-full">
+    <div class="dark:bg-[#0A0D12] flex flex-col gap-[60px] p-10 max-[393px]:p-6 bg-[#fafafa] border border-[#dfdfdf] rounded-3xl">
     <!-- BAGIAN ATAS: FLEX utk desktop, GRID utk mobile -->
     <div class="flex justify-between items-start max-[393px]:grid max-[393px]:grid-cols-1 max-[393px]:gap-4">
-
       <!-- JUDUL -->
       <h2 class="leading-11 text-4xl font-bold max-[393px]:order-2 max-[393px]:text-3xl max-[393px]:leading-9">
         LET'S DISCUSS YOUR IDEAS
       </h2>
-
       <!-- LOGO -->
       <div class="flex h-[29.59px] w-[150px] pr-7 max-[393px]:pr-0 max-[393px]:pl-7 scale-150 font-bold justify-end max-[393px]:justify-start max-[393px]:order-1">
         <img class="w-109px pr-3" src="/assets/images/logo-symbol.png" />Your Logo
       </div>
     </div>
-
     <!-- GARIS PEMBATAS -->
     <div class="basis-[1px] bg-[#dfdfdf]"></div>
-
     <!-- NAVIGATION & SOCIAL MEDIA -->
-    <div class="flex justify-between items-start max-[393px]:flex-col max-[393px]:gap-6">
-      
+    <div class="flex justify-between items-start max-[393px]:flex-col max-[393px]:gap-6">     
       <!-- MENU NAVIGASI -->
       <ul class="flex flex-wrap max-[393px]:flex-col max-[393px]:gap-0">
         <li><a class="block py-2 px-4 rounded-full" href="#About ">About</a></li>
@@ -929,7 +936,6 @@
         <li><a class="block py-2 px-4 rounded-full" href="#Testimonials">Testimonials</a></li>
         <li><a class="block py-2 px-4 rounded-full" href="#FAQ">FAQ</a></li>
       </ul>
-
       <!-- IKON SOSIAL MEDIA -->
       <ul class="flex gap-4 max-[393px]:self-start max-[393px]:pt-2">
         <li>
@@ -950,19 +956,18 @@
         <li>
           <a class="block w-10 h-10 border border-[#dfdfdf] py-[9.5px] rounded-full filter invert dark:filter-none" href="#">
             <img class="mx-auto" src="/assets/images/tiktok.png" />
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-<!-- 12. Footer End -->
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- 12. Footer End -->
 
     <!-- Hamburger -->
     <script>
     const hamburger = document.querySelector('.hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
-
     hamburger.addEventListener('click', () => {
       mobileMenu.classList.toggle('show');
     });
