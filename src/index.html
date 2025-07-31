@@ -15,23 +15,6 @@
         <button id="theme-toggle" class="toggle cursor-pointer text-sm font-bold px-4 py-2 bg-gray-200 dark:bg-gray-700 text-black dark:text-white rounded-4xl">
           dark/light
         </button>
-        <script>
-          if (localStorage.getItem("theme") === "dark") {
-            document.documentElement.classList.add("dark");
-          } else if (localStorage.getItem("theme") === "light") {
-            document.documentElement.classList.remove("dark");
-          } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-            document.documentElement.classList.add("dark");
-          }
-          document.getElementById("theme-toggle").addEventListener("click", () => {
-            document.documentElement.classList.toggle("dark");
-            if (document.documentElement.classList.contains("dark")) {
-              localStorage.setItem("theme", "dark");
-            } else {
-              localStorage.setItem("theme", "light");
-            }
-          });
-        </script>
         <!-- Logo -->
         <a href="#" class="flex items-center pl-4">
           <img class="logo" src="/assets/images/logo-symbol.png" alt="your logo" />
@@ -450,29 +433,6 @@
         </div>
       </div>
     </section>
-    <!-- Script untuk interaksi -->
-    <script>
-      const tabs = document.querySelectorAll('.industry-tab');
-      const cards = document.querySelectorAll('.industry-card');
-      const indicators = document.querySelectorAll('.industry-tab .indicator');
-
-      tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-          const target = tab.dataset.target;
-
-          // Tampilkan hanya card yang sesuai
-          cards.forEach(card => {
-            card.classList.toggle('hidden', card.id !== target);
-          });
-
-          // Update warna indikator
-          indicators.forEach(indicator => {
-            indicator.classList.replace('bg-[#ff623e]', 'bg-[#aaa]');
-          });
-          tab.querySelector('.indicator').classList.replace('bg-[#aaa]', 'bg-[#ff623e]');
-        });
-      });
-    </script>
     <!-- 7. Built for Your Industry Section End -->
 
     <!-- 8.Portfolio Section Start -->
@@ -629,35 +589,8 @@
       </div>
     </section>
     <!-- 9. Testimony Section End -->
-      <!-- Script Geser Slider -->
-      <script>
-        let currentSlide = 0;
-        function goToSlide(index) {
-          const slider = document.getElementById('testimonialSlider');
-          const cards = slider.querySelectorAll('.testimonial-card');
-          const isMobile = window.innerWidth <= 393;
-          currentSlide = index;
-          if (isMobile) {
-            const cardWidth = cards[0].offsetWidth + 16; // tambah jarak antar card (gap-4 = 16px)
-            const containerWidth = slider.parentElement.offsetWidth;
-            const offset = index * cardWidth - (containerWidth - cardWidth) / 2;
-            slider.style.transform = `translateX(-${offset}px)`;
-          } else {
-            slider.style.transform = `translateX(-${index * 100}%)`;
-          }
-          document.querySelectorAll('.dot').forEach((dot, i) => {
-            dot.classList.remove('bg-[#ff6c37]');
-            dot.classList.add('bg-[#e5e5e5]');
-            if (i === index) {
-              dot.classList.add('bg-[#ff6c37]');
-              dot.classList.remove('bg-[#e5e5e5]');
-            }
-          });
-        }
-        window.addEventListener('resize', () => goToSlide(currentSlide));
-      </script>
     
-      <!-- 10.Ask me Section Start -->
+    <!-- 10.Ask me Section Start -->
       <section id="FAQ" class="max-[393px]:py-10 max-[393px]:px-3.5 flex flex-col gap-12 py-20 px-[120px]  bg-white dark:bg-black text-black dark:text-white w-full">
         <div class="flex justify-between max-[393px]:grid">
           <h2 class="basis-[331px] leading-14 text-[40px] font-bold">
@@ -880,34 +813,6 @@
         <button class="text-[#FFFFFF] bg-[#FF623E] font-bold max-[393px]:w-[305px] w-[361px] h-[48px] rounded-full mt-10">Back to Home</button>
       </div>
     </dialog>
-    <!-- Script validasi form + kontrol popup -->
-    <script>
-      document.getElementById("sendBtn").addEventListener("click", function (e) {
-        e.preventDefault();
-        const name = document.getElementById("nameInput").value.trim();
-        const email = document.getElementById("emailInput").value.trim();
-        const message = document.getElementById("messageInput").value.trim();
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const successPopup = document.getElementById("successPopup");
-        const errorPopup = document.getElementById("errorPopup");
-        const overlay = document.getElementById("overlayBlur");
-        if (name && emailRegex.test(email) && message) {
-          successPopup.classList.remove("hidden");
-          overlay.classList.remove("hidden");
-          document.getElementById("contactForm").reset();
-        } else {
-          errorPopup.classList.remove("hidden");
-          overlay.classList.remove("hidden");
-        }
-      });
-      document.querySelectorAll("dialog button").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          document.getElementById("successPopup").classList.add("hidden");
-          document.getElementById("errorPopup").classList.add("hidden");
-          document.getElementById("overlayBlur").classList.add("hidden");
-        });
-      });
-    </script>
     <!-- 11.Consumer's Contact Section End -->
     
     <!-- 12. Footer Start -->
@@ -964,7 +869,26 @@
     </section>
     <!-- 12. Footer End -->
 
-    <!-- Hamburger -->
+    <!-- a. Script Header-Toggle dark mode-->
+    <script>
+      if (localStorage.getItem("theme") === "dark") {
+          document.documentElement.classList.add("dark");
+      } else if (localStorage.getItem("theme") === "light") {
+        document.documentElement.classList.remove("dark");
+      } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        document.documentElement.classList.add("dark");
+      }
+      document.getElementById("theme-toggle").addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark");
+        if (document.documentElement.classList.contains("dark")) {
+          localStorage.setItem("theme", "dark");
+        } else {
+          localStorage.setItem("theme", "light");
+        }
+      });
+    </script>
+
+    <!-- b. Script Header-Hamburger -->
     <script>
     const hamburger = document.querySelector('.hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
@@ -973,15 +897,93 @@
     });
     </script>
 
-    <!-- Button -->
+    <!-- c. Scrip Button-for link -->
     <script>
     function scrollToSection(id) {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
+      }
     }
-  }
-  </script>
+    </script>
+
+    <!-- d. Scrip untuk interaksi di Built for Your Industry Section-->
+    <script>
+      const tabs = document.querySelectorAll('.industry-tab');
+      const cards = document.querySelectorAll('.industry-card');
+      const indicators = document.querySelectorAll('.industry-tab .indicator');
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const target = tab.dataset.target;
+          // Tampilkan hanya card yang sesuai
+          cards.forEach(card => {
+            card.classList.toggle('hidden', card.id !== target);
+          });
+          // Update warna indikator
+          indicators.forEach(indicator => {
+            indicator.classList.replace('bg-[#ff623e]', 'bg-[#aaa]');
+          });
+          tab.querySelector('.indicator').classList.replace('bg-[#aaa]', 'bg-[#ff623e]');
+        });
+      });
+    </script>
+
+    <!-- e. Script Geser Slider di Testimony Section End -->
+      <script>
+        let currentSlide = 0;
+        function goToSlide(index) {
+          const slider = document.getElementById('testimonialSlider');
+          const cards = slider.querySelectorAll('.testimonial-card');
+          const isMobile = window.innerWidth <= 393;
+          currentSlide = index;
+          if (isMobile) {
+            const cardWidth = cards[0].offsetWidth + 16; // tambah jarak antar card (gap-4 = 16px)
+            const containerWidth = slider.parentElement.offsetWidth;
+            const offset = index * cardWidth - (containerWidth - cardWidth) / 2;
+            slider.style.transform = `translateX(-${offset}px)`;
+          } else {
+            slider.style.transform = `translateX(-${index * 100}%)`;
+          }
+          document.querySelectorAll('.dot').forEach((dot, i) => {
+            dot.classList.remove('bg-[#ff6c37]');
+            dot.classList.add('bg-[#e5e5e5]');
+            if (i === index) {
+              dot.classList.add('bg-[#ff6c37]');
+              dot.classList.remove('bg-[#e5e5e5]');
+            }
+          });
+        }
+        window.addEventListener('resize', () => goToSlide(currentSlide));
+      </script>
+
+    <!-- f. Script validasi form + kontrol popup di Consumer's Contact Section -->
+    <script>
+      document.getElementById("sendBtn").addEventListener("click", function (e) {
+        e.preventDefault();
+        const name = document.getElementById("nameInput").value.trim();
+        const email = document.getElementById("emailInput").value.trim();
+        const message = document.getElementById("messageInput").value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const successPopup = document.getElementById("successPopup");
+        const errorPopup = document.getElementById("errorPopup");
+        const overlay = document.getElementById("overlayBlur");
+        if (name && emailRegex.test(email) && message) {
+          successPopup.classList.remove("hidden");
+          overlay.classList.remove("hidden");
+          document.getElementById("contactForm").reset();
+        } else {
+          errorPopup.classList.remove("hidden");
+          overlay.classList.remove("hidden");
+        }
+      });
+      document.querySelectorAll("dialog button").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          document.getElementById("successPopup").classList.add("hidden");
+          document.getElementById("errorPopup").classList.add("hidden");
+          document.getElementById("overlayBlur").classList.add("hidden");
+        });
+      });
+    </script>
 
   </body>
 </html>
